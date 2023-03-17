@@ -634,12 +634,15 @@ def open_file(file_name, mode):
         return the_file
 
 
-#----------------------------------------------------------------------
+#------------------------------------------------------------------------------
 # main
-#----------------------------------------------------------------------
+#------------------------------------------------------------------------------
 # Get the source file name. Create a temp file with extension .tmp
 print("\n--- Assembler for 8080 & 8085 microprocessors ---")
-source_file = input("Enter the source file name: ")
+if len(sys.argv) < 2:
+    source_file = input("Enter the source file name: ")
+else:
+    source_file = sys.argv[1].strip()
 list_file = source_file[0:source_file.find('.')] + '.tmp'
 print ("Assembling " + source_file + "... ", end="")
 # Open the source file for reading and a temp listing file for writing
