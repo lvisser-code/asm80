@@ -785,7 +785,7 @@ for line in listing:
                 try:
                     offset = -int(label_minus[1])
                 except ValueError:
-                    label = label_plus[0]+label_plus[1]
+                    label = label_minus[0]+label_minus[1]
             add = ''
             for sym in parser.symbols: # search for symbol in symbol table
                 if sym[0] == label:
